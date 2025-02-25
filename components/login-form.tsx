@@ -35,7 +35,6 @@ export function LoginForm({
         { email, password },
         {
           withCredentials: true, // Allows HTTP-only cookie handling
-          headers: { "Content-Type": "application/json" },
         }
       );
       localStorage.setItem("userId", data.user);
