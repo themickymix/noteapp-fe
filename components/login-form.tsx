@@ -30,11 +30,20 @@ export function LoginForm({
     setIsLoading(true);
 
     try {
-      const { data } = await axios.post(
+         const { data } = await axios.post(
         "https://note-be-ql9a.onrender.com/api/user/login",
         { email, password },
         {
-          withCredentials: true, // Allows HTTP-only cookie handling
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type, Authorization",
+            "Access-Control-Expose-Headers": "Set-Cookie",
+          },
+          withCredentials: true, // Ensure cookies are sent if needed
         }
       );
       localStorage.setItem("userId", data.user);
