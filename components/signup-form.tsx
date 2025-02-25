@@ -29,7 +29,7 @@ export function SignUpForm({
     setIsLoading(true);
     try {
       await axios.post(
-        "https://note-be-ql9a.onrender.com/api/user/signup", // Corrected endpoint
+        "/api/user/signup", // Corrected endpoint
         { name, email, password },
         {
           withCredentials: true,
