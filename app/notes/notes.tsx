@@ -36,7 +36,7 @@ function Notes({
     const fetchNotes = async () => {
       try {
         const response = await axios.get(
-          `https://note-be-ql9a.onrender.com/api/notes`,
+          `/api/notes`,
           {
             withCredentials: true,
             headers: {
