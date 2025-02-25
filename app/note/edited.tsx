@@ -96,7 +96,7 @@ export function EditedNote({
 
       try {
         const response = await fetch(
-          `https://note-be-ql9a.onrender.com/api/note/${noteId}`,
+          `/api/note/${noteId}`,
           {
             method: "PATCH",
             credentials: "include",
