@@ -71,7 +71,7 @@ export function EditedNote({
     const fetchNote = async () => {
       try {
         const response = await fetch(
-          `https://note-be-ql9a.onrender.com/api/note/${noteId}`,
+          `/api/note/${noteId}`,
           {
             credentials: "include",
             headers: { "Content-Type": "application/json" },
