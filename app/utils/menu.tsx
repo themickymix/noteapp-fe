@@ -27,7 +27,7 @@ function Menu({
 }) {
   const deleteNote = async (id: string) => {
     try {
-      await axios.delete(`https://note-be-ql9a.onrender.com/api/notes/${id}`, {
+      await axios.delete(`/api/notes/${id}`, {
         withCredentials: true,
         headers: { "Content-Type": "application/json" },
       });
