@@ -26,7 +26,7 @@ function Navbar() {
     (async () => {
       try {
         const { data } = await axios.get(
-          `https://note-be-ql9a.onrender.com/api/user/${userId}`,
+          `/api/user/${userId}`,
           {
             withCredentials: true,
           }
