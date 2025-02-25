@@ -20,7 +20,7 @@ export function LogoutModal() {
   const logout = async () => {
     try {
       await axios.post(
-        "https://note-be-ql9a.onrender.com/api/user/logout",
+        "api/user/logout",
         {},
         { withCredentials: true }
       );
