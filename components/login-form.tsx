@@ -31,7 +31,7 @@ export function LoginForm({
 
     try {
          const { data } = await axios.post(
-        "https://note-be-ql9a.onrender.com/api/user/login",
+        "/api/user/login",
         { email, password },
         {
           headers: {
