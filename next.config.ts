@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-async rewrites() {
+  async rewrites() {
     return [
       {
         source: "/api/:path*",  
@@ -9,7 +9,6 @@ async rewrites() {
       },
     ];
   },
-  /* config options here */
 };
 
 export default nextConfig;
