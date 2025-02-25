@@ -32,7 +32,7 @@ export function AddNote({
 
       try {
         const response = await fetch(
-          "https://note-be-ql9a.onrender.com/api/notes",
+          "/api/notes",
           {
             method: "POST",
             credentials: "include",
@@ -86,7 +86,7 @@ export function AddNote({
   return (
     <div
       ref={componentRef}
-      className="w-[400px] justify-self-center mb-10"
+      className="w-[400px] justify-self-center mb-10 m-4"
       onFocus={handleFocus}
       onBlur={handleBlur}
       tabIndex={-1}>
@@ -149,7 +149,7 @@ export function AddNote({
                 setIsFocused(false);
               }}
               className="bg-transparent text-gray-700 hover:bg-gray-100 h-6">
-              Close
+              Save
             </Button>
           </div>
         )}
