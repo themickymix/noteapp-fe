@@ -86,7 +86,7 @@ export function AddNote({
   return (
     <div
       ref={componentRef}
-      className="w-[400px] justify-self-center mb-10 m-4"
+      className="w-full md:w-[400px] justify-self-center mb-10 m-4"
       onFocus={handleFocus}
       onBlur={handleBlur}
       tabIndex={-1}>
@@ -142,7 +142,10 @@ export function AddNote({
         />
 
         {isFocused && (
-          <div className="flex justify-end mb-2">
+          <div className="flex justify-between w-full mb-2">
+            <span className="text-xs flex items-center">
+              Both fields are required
+            </span>
             <Button
               onClick={() => {
                 addNote();

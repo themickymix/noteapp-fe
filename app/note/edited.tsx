@@ -70,13 +70,10 @@ export function EditedNote({
 
     const fetchNote = async () => {
       try {
-        const response = await fetch(
-          `/api/note/${noteId}`,
-          {
-            credentials: "include",
-            headers: { "Content-Type": "application/json" },
-          }
-        );
+        const response = await fetch(`/api/note/${noteId}`, {
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+        });
 
         if (!response.ok) throw new Error("Network response was not ok");
 
@@ -95,15 +92,12 @@ export function EditedNote({
       if (!updatedNote) return;
 
       try {
-        const response = await fetch(
-          `/api/note/${noteId}`,
-          {
-            method: "PATCH",
-            credentials: "include",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(updatedNote),
-          }
-        );
+        const response = await fetch(`/api/note/${noteId}`, {
+          method: "PATCH",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(updatedNote),
+        });
 
         if (!response.ok) throw new Error("Network response was not ok");
 
@@ -167,7 +161,7 @@ export function EditedNote({
       <DialogTrigger asChild>
         <button onClick={() => setOpen(true)}></button>
       </DialogTrigger>
-      <DialogContent className="w-[90%] md:w-full rounded-lg">
+      <DialogContent className="w-[100vw] h-[100vh] md:w-[90%] md:h-auto rounded-lg">
         <DialogHeader className="flex flex-row items-center justify-between sm:justify-end">
           <DialogTitle></DialogTitle>
         </DialogHeader>
@@ -203,14 +197,44 @@ export function EditedNote({
           />
         </div>
         <DialogFooter>
-          <div className="h-[15%] mt-4 flex justify-between items-center">
-            {/* Date at the top left */}
+          <div className="flex justify-between gap-2 w-full">
+            <div className="text-[10px] flex items-center">
+        
+              {formatDate(localNote.createdAt || "")}
+            </div>
+            <div className="flex items-center gap-2 justify-self-end">
+            
+              <div
+                onClick={() => {
+                  const newPinnedState = !localNote.isPinned;
+                  setLocalNote((prev) => ({
+                    ...prev,
+                    isPinned: newPinnedState,
+                  }));
+                  setIsPinned(newPinnedState);
+                }}
+                className="cursor-pointer">
+                {localNote.isPinned ? (
+                  <Pin
+                    fill="currentColor"
+                    strokeWidth={1.5}
+                    className="w-5 h-5"
+                  />
+                ) : (
+                  <Pin className="w-5 h-5" />
+                )}
+              </div>
+              <Menu noteId={noteId} setNotes={setNotes} setOpen={setOpen} />
+            </div>
+          </div>
+          {/*    <div className="h-[15%] mt-4 flex justify-between items-center">
+           
             <div className="fixed text-[10px] flex items-center left-8">
               {formatDate(localNote.createdAt || "")}
             </div>
 
-            {/* Icons at the top right */}
-            <div className="flex items-center gap-2">
+          
+            <div className="flex items-center gap-2 justify-self-end">
               <div
                 onClick={() => {
                   const newPinnedState = !localNote.isPinned;
@@ -234,7 +258,7 @@ export function EditedNote({
 
               <Menu noteId={noteId} setNotes={setNotes} setOpen={setOpen} />
             </div>
-          </div>
+          </div> */}
         </DialogFooter>
       </DialogContent>
     </Dialog>

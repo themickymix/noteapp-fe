@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative">
       <Navbar />
-      <div className="p-10">
+      <div className="p-4 md:p-10">
         {/* Login & Logout */}
         <div>
     
