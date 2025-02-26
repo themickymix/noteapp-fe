@@ -59,7 +59,7 @@ export function EditedNote({
     if (!element) return;
     element.style.height = "auto";
     // Set max height to 60vh (60% of viewport height)
-    const maxHeight = Math.floor(window.innerHeight * 0.6);
+    const maxHeight = Math.floor(window.innerHeight * 0.8);
     const newHeight = Math.min(element.scrollHeight, maxHeight);
     element.style.height = `${newHeight}px`;
     setContentHeight(`${newHeight}px`);
@@ -161,11 +161,11 @@ export function EditedNote({
       <DialogTrigger asChild>
         <button onClick={() => setOpen(true)}></button>
       </DialogTrigger>
-      <DialogContent className="w-[90vw] h-[90vh] md:w-[90%] md:h-auto rounded-lg">
-        <DialogHeader className="flex flex-row items-center justify-between sm:justify-end">
+      <DialogContent className="w-[100vw] h-[100vh] md:w-[90%] md:h-auto rounded-lg">
+        <DialogHeader>
           <DialogTitle></DialogTitle>
         </DialogHeader>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col">
           <textarea
             value={localNote.title}
             placeholder="Title"
@@ -182,7 +182,7 @@ export function EditedNote({
             placeholder="Take a note"
             value={localNote.content}
             style={{ height: contentHeight }}
-            className="border-none outline-none p-0 m-0 w-full bg-transparent md:min-h-[24px] resize-none overflow-y-auto"
+            className="border-none outline-none p-0 m-0 w-full bg-transparent h-full md:min-h-[24px] resize-none overflow-y-auto"
             spellCheck={false}
             onChange={(e) => {
               setTyping(true);
