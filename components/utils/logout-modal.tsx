@@ -62,7 +62,7 @@ export function LogoutModal() {
             disabled={loading}
             className="px-4 py-2 bg-red-600 text-white rounded-md flex items-center justify-center gap-2 disabled:opacity-50">
             {loading ? (
-              <div className="flex items-center gap-2">
+              <div className="flex  items-center justify-center gap-2">
                 <svg
                   className="w-5 h-5 text-gray-300 animate-spin"
                   viewBox="0 0 64 64"
