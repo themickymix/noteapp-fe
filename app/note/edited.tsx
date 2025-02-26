@@ -161,7 +161,7 @@ export function EditedNote({
       <DialogTrigger asChild>
         <button onClick={() => setOpen(true)}></button>
       </DialogTrigger>
-      <DialogContent className="w-[100vw] h-[100vh] md:w-[90%] md:h-auto rounded-lg">
+      <DialogContent className="w-[95vw] md:w-[90%] h-auto rounded-lg">
         <DialogHeader>
           <DialogTitle></DialogTitle>
         </DialogHeader>
