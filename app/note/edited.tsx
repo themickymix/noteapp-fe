@@ -161,7 +161,7 @@ export function EditedNote({
       <DialogTrigger asChild>
         <button onClick={() => setOpen(true)}></button>
       </DialogTrigger>
-      <DialogContent className="w-[100vw] h-[100vh] md:w-[90%] md:h-auto rounded-lg">
+      <DialogContent className="w-[90vw] h-[90vh] md:w-[90%] md:h-auto rounded-lg">
         <DialogHeader className="flex flex-row items-center justify-between sm:justify-end">
           <DialogTitle></DialogTitle>
         </DialogHeader>
@@ -169,7 +169,7 @@ export function EditedNote({
           <textarea
             value={localNote.title}
             placeholder="Title"
-            className="border-none outline-none p-0 m-0 bg-transparent font-bold text-lg min-h-[24px] resize-none overflow-hidden"
+            className="border-none outline-none p-0 m-0 bg-transparent font-bold text-lg md:min-h-[24px] resize-none overflow-hidden"
             spellCheck={false}
             onChange={(e) => {
               setTyping(true);
@@ -182,7 +182,7 @@ export function EditedNote({
             placeholder="Take a note"
             value={localNote.content}
             style={{ height: contentHeight }}
-            className="border-none outline-none p-0 m-0 w-full bg-transparent min-h-[24px] resize-none overflow-y-auto"
+            className="border-none outline-none p-0 m-0 w-full bg-transparent md:min-h-[24px] resize-none overflow-y-auto"
             spellCheck={false}
             onChange={(e) => {
               setTyping(true);
