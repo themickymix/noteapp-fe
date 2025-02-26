@@ -59,7 +59,7 @@ export function EditedNote({
     if (!element) return;
     element.style.height = "auto";
     // Set max height to 60vh (60% of viewport height)
-    const maxHeight = Math.floor(window.innerHeight * 0.8);
+    const maxHeight = Math.floor(window.innerHeight * 0.6);
     const newHeight = Math.min(element.scrollHeight, maxHeight);
     element.style.height = `${newHeight}px`;
     setContentHeight(`${newHeight}px`);
